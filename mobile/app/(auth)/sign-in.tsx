@@ -94,7 +94,7 @@ export default function Page() {
         <View style={styles.footerContainer}>
           <Text style={styles.footerText}>Don't have an account?</Text>
           <Link href='/sign-up' asChild>
-            <TouchableOpacity onPress={() => router.back()}>
+            <TouchableOpacity>
               <Text style={styles.linkText}>Sign Up</Text>
             </TouchableOpacity>
           </Link>

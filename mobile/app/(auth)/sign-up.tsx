@@ -150,11 +150,9 @@ export default function SignUpScreen() {
         </TouchableOpacity>
         <View style={styles.footerContainer}>
           <Text style={styles.footerText}>Already have an account?</Text>
-          <Link href='/sign-in' asChild>
-            <TouchableOpacity onPress={() => router.back()}>
-              <Text style={styles.linkText}>Sign In</Text>
-            </TouchableOpacity>
-          </Link>
+          <TouchableOpacity onPress={() => router.back()}>
+            <Text style={styles.linkText}>Sign In</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </KeyboardAwareScrollView>

@@ -1,9 +1,17 @@
 import { SignedIn, SignedOut, useUser } from '@clerk/clerk-expo';
 import { Link, useRouter } from 'expo-router';
-import { Text, View } from 'react-native';
+import {
+  Text,
+  View,
+  Alert,
+  Image,
+  RefreshControl,
+  TouchableOpacity,
+  FlatList,
+} from 'react-native';
 import { SignOutButton } from '../../components/SignOutButton';
 import { styles } from '../../assets/styles/home.styles';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Page() {
   const { user } = useUser();
