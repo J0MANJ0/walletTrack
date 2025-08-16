@@ -5,9 +5,9 @@ import { apiUrl } from '@/constants/api';
 export const userTransactions = (userId: string) => {
   const [transactions, setTransactions] = useState([]);
   const [summary, setSummary] = useState({
-    balance: 0,
-    income: 0,
-    expenses: 0,
+    balance: '0',
+    income: '0',
+    expenses: '0',
   });
 
   const [loading, setLoading] = useState(false);

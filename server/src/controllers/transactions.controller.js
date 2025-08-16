@@ -9,7 +9,7 @@ export const getUserTransactions = async (req, res) => {
     const transactions =
       await sql`SELECT * FROM transactions WHERE user_id = ${userId} ORDER BY created_at DESC`;
 
-    res.status(200).json({ transactions });
+    res.status(200).json(transactions);
   } catch (error) {
     console.log('Error getting user transactions: ', error.message);
     res
