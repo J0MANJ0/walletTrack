@@ -50,7 +50,7 @@ export const userTransactions = (userId: string) => {
     }
   }, [fetchTransactions, fetchSummary, userId]);
 
-  const deleteTransction = async (id: string) => {
+  const deleteTransaction = async (id: string) => {
     try {
       const res = await fetch(`${apiUrl}/transactions/${id}`, {
         method: 'DELETE',
@@ -66,5 +66,5 @@ export const userTransactions = (userId: string) => {
     }
   };
 
-  return { transactions, summary, loading, loadData, deleteTransction };
+  return { transactions, summary, loading, loadData, deleteTransaction };
 };

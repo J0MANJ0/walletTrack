@@ -23,8 +23,8 @@ export default function Page() {
   const { user } = useUser();
   const router = useRouter();
   const [refreshing, setRefreshing] = useState(false);
-  const { transactions, summary, loadData, loading, deleteTransction } =
-    userTransactions('1');
+  const { transactions, summary, loadData, loading, deleteTransaction } =
+    userTransactions(user?.id);
 
   const onRefresh = async () => {
     setRefreshing(true);
@@ -44,12 +44,16 @@ export default function Page() {
       'Are you sure you want to delete this transaction?',
       [
         { text: 'Cancel', style: 'cancel' },
-        { text: 'Delete', style: 'destructive', onPress: deleteTransction(id) },
+        {
+          text: 'Delete',
+          style: 'destructive',
+          onPress: deleteTransaction(id),
+        },
       ]
     );
   };
 
-  if (loading) return <PageLoader />;
+  if (loading && !refreshing) return <PageLoader />;
 
   return (
     <View style={styles.container}>
